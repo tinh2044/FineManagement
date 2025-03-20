@@ -20,7 +20,7 @@ const groupData = (data, judgements = {}) => {
             acc.push(penaltyName);
         }
         return acc;
-    }, [])[0];
+    }, [])[0] || [];
     console.log(penaltyNames);
     const grouped = {};
 
@@ -65,6 +65,7 @@ const groupData = (data, judgements = {}) => {
 };
 
 const PaymentHistory = ({ open, onClose, prisoner, isDialog = true, setTrigger, trigger }) => {
+    console.log(prisoner);
     const [data, setData] = useState([]);
     const [openPaymentModal, setOpenPaymentModal] = useState(false);
     const [openUpdatePayment, setOpenUpdatePayment] = useState(false);

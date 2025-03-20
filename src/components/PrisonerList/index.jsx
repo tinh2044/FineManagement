@@ -86,21 +86,21 @@ function PrisonerList() {
         loadData(1);
     }, [trigger]);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (
-                window.innerHeight + document.documentElement.scrollTop >=
-                document.documentElement.offsetHeight - 1 &&
-                !loading &&
-                hasMore
-            ) {
-                loadData(page);
-            }
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (
+    //             window.innerHeight + document.documentElement.scrollTop >=
+    //             document.documentElement.offsetHeight - 1 &&
+    //             !loading &&
+    //             hasMore
+    //         ) {
+    //             loadData(1);
+    //         }
+    //     };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [loading, hasMore, page]);
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, [loading, hasMore, page]);
 
     return (
         <div>

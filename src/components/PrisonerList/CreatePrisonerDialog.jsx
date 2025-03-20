@@ -7,8 +7,8 @@ function CreatePrisonerDialog({ open, onClose, onCreate }) {
     const [pob, setPob] = useState('');
 
     const handleSubmit = () => {
-        if (!name) {
-            alert('Tên Phạm nhân không được để trống');
+        if (!name || !dob || !pob) {
+            alert('Không được để trống thông tin');
             return;
         }
         onCreate({ prisonerName: name, dob, pob });
@@ -37,6 +37,7 @@ function CreatePrisonerDialog({ open, onClose, onCreate }) {
                     fullWidth
                     margin="normal"
                     InputLabelProps={{ shrink: true }}
+                    required
                 />
                 <TextField
                     label="Nơi sinh"
@@ -44,6 +45,7 @@ function CreatePrisonerDialog({ open, onClose, onCreate }) {
                     onChange={(e) => setPob(e.target.value)}
                     fullWidth
                     margin="normal"
+                    required
                 />
             </DialogContent>
             <DialogActions>
